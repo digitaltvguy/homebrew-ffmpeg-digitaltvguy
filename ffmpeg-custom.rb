@@ -1,4 +1,4 @@
-class FfmpegCustom < Formula
+class Ffmpeg < Formula
   desc "FFmpeg with stock Homebrew features plus additional codecs and libraries"
   homepage "https://ffmpeg.org/"
   url "https://ffmpeg.org/releases/ffmpeg-8.0.1.tar.xz"
