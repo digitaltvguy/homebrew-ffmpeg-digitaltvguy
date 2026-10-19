@@ -1,8 +1,8 @@
 class Ffmpeg < Formula
   desc "FFmpeg with stock Homebrew features plus additional codecs and libraries"
   homepage "https://ffmpeg.org/"
-  url "https://ffmpeg.org/releases/ffmpeg-8.0.1.tar.xz"
-  sha256 "05ee0b03119b45c0bdb4df654b96802e909e0a752f72e4fe3794f487229e5a41"
+  url "https://ffmpeg.org/releases/ffmpeg-9.0.2.tar.xz"
+  sha256 "8c3850283eb25fa026482078a04051e0be17347b09ef81a0849bec15a96e002e"
   revision 2
   license "GPL-2.0-or-later"
 
