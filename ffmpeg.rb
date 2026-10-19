@@ -30,7 +30,7 @@ class Ffmpeg < Formula
   depends_on "libsoxr"
   depends_on "libvmaf"
   depends_on "little-cms2"
-  depends_on "open-color-io"
+  depends_on "opencolorio"
   depends_on "openjpeg"
   depends_on "srt"
   depends_on "two-lame"
