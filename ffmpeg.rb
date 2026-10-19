@@ -33,6 +33,9 @@ class Ffmpeg < Formula
   depends_on "zimg"
   depends_on "libplacebo"
   depends_on "jpeg-xl"
+  depends_on "little-cms2"
+  depends_on "libxml2"
+  depends_on "open-color-io"
 
   uses_from_macos "bzip2"
   uses_from_macos "libxml2"
@@ -89,6 +92,11 @@ class Ffmpeg < Formula
       --enable-libopenjpeg
       --enable-libplacebo
       --enable-libjxl
+      --enable-libplacebo
+      --enable-libjxl
+      --enable-lcms2
+      --enable-libxml2
+      --enable-libopencolorio
     ]
 
     if system("pkg-config", "--exists", "fribidi")
