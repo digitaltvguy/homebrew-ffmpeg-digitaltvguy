@@ -23,19 +23,18 @@ class Ffmpeg < Formula
   depends_on "fdk-aac"
   depends_on "freetype"
   depends_on "harfbuzz"
+  depends_on "jpeg-xl"
   depends_on "libass"
+  depends_on "libplacebo"
   depends_on "librist"
   depends_on "libsoxr"
   depends_on "libvmaf"
+  depends_on "little-cms2"
+  depends_on "open-color-io"
   depends_on "openjpeg"
   depends_on "srt"
   depends_on "two-lame"
   depends_on "zimg"
-  depends_on "libplacebo"
-  depends_on "jpeg-xl"
-  depends_on "little-cms2"
-  depends_on "libxml2"
-  depends_on "open-color-io"
 
   uses_from_macos "bzip2"
   uses_from_macos "libxml2"
@@ -52,9 +51,10 @@ class Ffmpeg < Formula
     depends_on "zlib-ng-compat"
   end
 
-
   def install
-    ENV.append "LDFLAGS", "-Wl,-ld_classic" if OS.mac? && DevelopmentTools.ld64_version.between?("1015.7", "1022.1")
+    if OS.mac? && DevelopmentTools.ld64_version.between?("1015.7", "1022.1")
+      ENV.append "LDFLAGS", "-Wl,-ld_classic"
+    end
 
     args = %W[
       --prefix=#{prefix}
@@ -69,6 +69,7 @@ class Ffmpeg < Formula
       --host-ldflags=#{ENV.ldflags}
 
       --enable-ffplay
+
       --enable-libsvtav1
       --enable-libopus
       --enable-libx264
@@ -90,8 +91,7 @@ class Ffmpeg < Formula
       --enable-libzimg
       --enable-libvmaf
       --enable-libopenjpeg
-      --enable-libplacebo
-      --enable-libjxl
+
       --enable-libplacebo
       --enable-libjxl
       --enable-lcms2
