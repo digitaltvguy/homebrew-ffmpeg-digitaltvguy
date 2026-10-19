@@ -3,7 +3,6 @@ class Ffmpeg < Formula
   homepage "https://ffmpeg.org/"
   url "https://ffmpeg.org/releases/ffmpeg-9.0.2.tar.xz"
   sha256 "8c3850283eb25fa026482078a04051e0be17347b09ef81a0849bec15a96e002e"
-  revision 2
   license "GPL-2.0-or-later"
 
   depends_on "pkgconf" => :build
@@ -32,6 +31,8 @@ class Ffmpeg < Formula
   depends_on "srt"
   depends_on "two-lame"
   depends_on "zimg"
+  depends_on "libplacebo"
+  depends_on "jpeg-xl"
 
   uses_from_macos "bzip2"
   uses_from_macos "libxml2"
@@ -86,6 +87,8 @@ class Ffmpeg < Formula
       --enable-libzimg
       --enable-libvmaf
       --enable-libopenjpeg
+      --enable-libplacebo
+      --enable-libjxl
     ]
 
     if system("pkg-config", "--exists", "fribidi")
