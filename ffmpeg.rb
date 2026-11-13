@@ -52,6 +52,8 @@ class Ffmpeg < Formula
   end
 
   def install
+    # Avoid collision with the C++ <version> header on macOS.
+    mv "VERSION", "VERSION.txt" if File.exist?("VERSION")
     if OS.mac? && DevelopmentTools.ld64_version.between?("1015.7", "1022.1")
       ENV.append "LDFLAGS", "-Wl,-ld_classic"
     end
